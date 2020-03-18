@@ -5,28 +5,24 @@ const readline = require("readline").createInterface({
 
 function handleUserResponse (response) {
 
-if (response === "rock" || response === "paper" || response === "scissors"){
+if (response.toLowerCase() === "rock" || response.toLowerCase() === "paper" || response.toLowerCase() === "scissors"){
     let options = ["rock", "paper", "scissors"];
     let randomOption = options[Math.floor(Math.random()*options.length)];
     console.log(randomOption);
-    if (response === "rock" && randomOption === "rock"){
+    if (response.toLowerCase() === randomOption){
         console.log("It's a draw!");
-    } else if (response === "rock" && randomOption === "paper"){
+    } else if (response.toLowerCase() === "rock" && randomOption === "paper"){
         console.log("You win!");
-    } else if (response === "rock" && randomOption === "scissors"){
+    } else if (response.toLowerCase() === "rock" && randomOption === "scissors"){
         console.log("You lose!");
-    } else if (response === "paper" && randomOption === "rock"){
+    } else if (response.toLowerCase() === "paper" && randomOption === "rock"){
         console.log("You win!");
-    } else if (response === "paper" && randomOption === "paper"){
-        console.log("It's a draw!");
-    } else if (response === "paper" && randomOption === "scissors"){
+    } else if (response.toLowerCase() === "paper" && randomOption === "scissors"){
         console.log("You lose!");
-    } else if (response === "scissors" && randomOption === "rock"){
+    } else if (response.toLowerCase() === "scissors" && randomOption === "rock"){
         console.log("You lose!");
-    } else if (response === "scissors" && randomOption === "paper"){
+    } else if (response.toLowerCase() === "scissors" && randomOption === "paper"){
         console.log("You win!");
-    } else if (response === "scissors" && randomOption === "scissors"){
-        console.log("It's a draw!");
     };
 } else {
     console.log("Please choose either rock, paper or scissors!");
@@ -39,7 +35,7 @@ if (response === "rock" || response === "paper" || response === "scissors"){
 readline.question("Please choose either rock, paper or scissors!\n", handleUserResponse);
 
 
-// make everything lower case - use .toLowerCase()
+
 // ascii art
 //console.log("It's a draw!")
 //console.log("You win!")
@@ -53,4 +49,12 @@ readline.question("Please choose either rock, paper or scissors!\n", handleUserR
 //     console.log("You win!");
 // } else if (result = "lose"){
 //     console.log("You lose!");
+// };
+
+//OBJECTS
+
+// let rock = {
+//     win: "scissors",
+//     lose: "paper",
+//     draw: "rock"
 // };
